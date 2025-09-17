@@ -1,62 +1,57 @@
-# Your startup name here
+# EduQuest
 
-[My Notes](notes.md)
-
-A brief description of the application here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-> [!NOTE]
->  This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
-
-> [!NOTE]
->  If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
+EduQuest is an interactive educational platform that provides students with personalized quests to strengthen their learning. The system uses Large Language Models (LLMs) to create weekly and daily quests tailored to each student’s strengths, weaknesses, interests, and learning styles. Teachers can also monitor and support student growth through the platform.
 
 ## 🚀 Specification Deliverable
 
-> [!NOTE]
->  Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
-
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+EduQuest is an interactive educational platform that transforms learning into personalized quests. By leveraging AI, it dynamically creates weekly and daily challenges tailored to each student’s strengths, weaknesses, and learning style. Students stay motivated through gamified progress, while teachers gain insights into their growth and can assign extra challenges. EduQuest empowers learners to grow step by step while keeping teachers connected in real time.
 
 ### Design
 
 ![Design image](placeholder.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
 ```mermaid
 sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
+    actor Student
+    actor EduQuest
+    actor Teacher
+    Student->>EduQuest: Login/Register
+    EduQuest->>Student: Personalized daily/weekly quests
+    Student->>EduQuest: Completes quest
+    EduQuest->>Teacher: Updates dashboard in real-time
+    Teacher->>EduQuest: Assigns additional quests
+    EduQuest->>Student: Updates with new quests
 ```
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Login / Registration System: Secure authentication for students and teachers.
+- Personalized Quests: Daily and weekly quests generated using AI based on user profile.
+- Real-time Updates: WebSocket integration for live quest completion tracking.
+- Interactive Frontend: Built with React for responsive and modular UI.
+- Teacher Dashboard: Monitor student progress and assign tasks.
+- Third-Party API Integration: Enriches educational experience through external APIs.
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Defines the structure of pages such as login, quests, and dashboards.
+- **CSS** - Styles components with a modern responsive layout and animations.
+- **React** - Handles routing, user interactions, and modular UI components.
+- **Service** - Provides RESTful endpoints for authentication, quest generation, and progress tracking.
+- **DB/Login** - Stores user profiles, quests, and authentication credentials securely.
+- **WebSocket** - Sends real-time updates when students complete quests or teachers assign tasks.
 
 ## 🚀 AWS deliverable
 
@@ -114,7 +109,6 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
 - [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
 - [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
-
 
 ## 🚀 DB deliverable
 
