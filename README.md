@@ -18,7 +18,11 @@ EduQuest is an interactive educational platform that transforms learning into pe
 
 ### Design
 
-![Design image](placeholder.png)
+Login
+![Rough Sketch](rouch_sketch.JPG)
+
+Chat Interface
+![Rough Sketch2](rough_sketch2.JPG)
 
 ```mermaid
 sequenceDiagram
@@ -63,15 +67,15 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [ ] **HTML pages** - Pages for login, quests, and progress.
+- [ ] **Proper HTML element usage** - Semantic elements used for accessibility.
+- [ ] **Links** - Navigation links between login, chat, and profile.
+- [ ] **Text** - Placeholder text for login and chat.
+- [ ] **3rd party API placeholder** - Example API placeholder integrated.
+- [ ] **Images** - Logo and quest icons.
+- [ ] **Login placeholder** - Placeholder login form.
+- [ ] **DB data placeholder** - Example user data from DB.
+- [ ] **WebSocket placeholder** - Mock quest update in real-time.
 
 ## 🚀 CSS deliverable
 
