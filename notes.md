@@ -19,9 +19,9 @@ No problems worked just like it said in the [instruction](https://github.com/web
 
 ## HTML
 
-This was easy. I was careful to use the correct structural elements such as header, footer, main, nav, and form. The links between the three views work great using the `a` element.
+For EduQuest I built four pages: `index.html` (Home), `chat.html` (Chat), `profile.html` (Profile), and `about.html` (About).
 
-The part I didn't like was the duplication of the header and footer code. This is messy, but it will get cleaned up when I get to React.
+I had to write headers and footers manually for every single page. When I wanted to modify, I needed to edit lines one by one. I can't wait to use React!
 
 ## CSS
 
