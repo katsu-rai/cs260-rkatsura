@@ -67,15 +67,15 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - Pages for login, quests, and progress.
-- [ ] **Proper HTML element usage** - Semantic elements used for accessibility.
-- [ ] **Links** - Navigation links between login, chat, and profile.
-- [ ] **Text** - Placeholder text for login and chat.
-- [ ] **3rd party API placeholder** - Example API placeholder integrated.
-- [ ] **Images** - Logo and quest icons.
-- [ ] **Login placeholder** - Placeholder login form.
-- [ ] **DB data placeholder** - Example user data from DB.
-- [ ] **WebSocket placeholder** - Mock quest update in real-time.
+- [x] **HTML pages** - Pages for login, quests, and progress.
+- [x] **Proper HTML element usage** - Semantic elements used for accessibility.
+- [x] **Links** - Navigation links between login, chat, and profile.
+- [x] **Text** - Placeholder text for login and chat.
+- [x] **3rd party API placeholder** - Example API placeholder integrated.
+- [x] **Images** - Logo and quest icons.
+- [x] **Login placeholder** - Placeholder login form.
+- [x] **DB data placeholder** - Example user data from DB.
+- [x] **WebSocket placeholder** - Mock quest update in real-time.
 
 ## 🚀 CSS deliverable
 
