@@ -19,10 +19,10 @@ EduQuest is an interactive educational platform that transforms learning into pe
 ### Design
 
 Login
-![Rough Sketch](rouch_sketch.JPG)
+![Rough Sketch](./source/images/rouch_sketch.JPG)
 
 Chat Interface
-![Rough Sketch2](rough_sketch2.JPG)
+![Rough Sketch2](./source/images/rough_sketch2.JPG)
 
 ```mermaid
 sequenceDiagram
