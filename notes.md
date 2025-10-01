@@ -25,11 +25,10 @@ I had to write headers and footers manually for every single page. When I wanted
 
 ## CSS
 
-This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
+Picking colors was fun. The red button color looked bold, and the soft background felt calm. Making links and buttons match was satisfying.
 
-Bootstrap seems a bit like magic. It styles things nicely, but is very opinionated. You either do, or you do not. There doesn't seem to be much in between.
+Layouts were harder. Getting things to look good on phone and laptop took time. I changed spacing, sizes, and alignments until it felt right. I felt like I would need to take design class to be good at layout. It's very different from the other coding skillsets.
 
-I did like the navbar it made it super easy to build a responsive header.
 
 ```html
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
