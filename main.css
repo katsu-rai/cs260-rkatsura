@@ -1,11 +1,3 @@
-/*
-  EduQuest base styles
-  - Minimal reset
-  - Theming via CSS variables
-  - Layout for header/nav, main content, forms, and footer
-*/
-
-/* ----- Reset & base ----- */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -38,13 +30,11 @@ body {
   flex-direction: column;
 }
 
-/* A centered, comfortable content width */
 header, main, footer {
   width: min(960px, 92%);
   margin-inline: auto;
 }
 
-/* ----- Header & Navigation ----- */
 header {
   padding-top: 1.25rem;
 }
@@ -89,7 +79,7 @@ main h1 {
   margin: 0.25rem 0 1rem;
 }
 
-/* Auth form on index.html */
+
 form {
   max-width: 420px;
   margin: 1rem 0 2rem;
@@ -146,4 +136,45 @@ button:active {
   transform: translateY(1px);
 }
 
-
+form button {
+    width: 100%;
+  }
+  
+  a {
+    color: var(--link);
+  }
+  
+  *:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  
+  /* ----- Footer ----- */
+  footer {
+    margin-top: auto;
+    padding-bottom: 1.5rem;
+  }
+  
+  .text-reset {
+    color: var(--muted-text);
+  }
+  
+  /* ----- Chat page niceties (safe if stylesheet reused) ----- */
+  #messages {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  #messages li + li {
+    margin-top: 0.5rem;
+  }
+  
+  @media (min-width: 560px) {
+    nav menu {
+      gap: 1.25rem;
+    }
+  }
+  
+  
