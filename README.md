@@ -81,12 +81,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - I did not complete this part of the deliverable.
-- [ ] **Navigation elements** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing** - I did not complete this part of the deliverable.
-- [ ] **Application elements** - I did not complete this part of the deliverable.
-- [ ] **Application text content** - I did not complete this part of the deliverable.
-- [ ] **Application images** - I did not complete this part of the deliverable.
+- [x] **Header, footer, and main content body** - Implemented consistent header/footer and centered content across pages.
+- [x] **Navigation elements** - Added nav menu links (Home, Chat, Profile, About) with styles and hover states.
+- [x] **Responsive to window resizing** - Mobile-first CSS with breakpoints; layouts and buttons adapt across sizes.
+- [x] **Application elements** - Styled login form, messages list, profile card, about sections, and CTA/edit buttons.
+- [x] **Application text content** - Applied readable typography, colors, spacing, and link states for accessibility.
+- [x] **Application images** - Added site favicon; styled profile avatar (rounded with border and sizing).
 
 ## 🚀 React part 1: Routing deliverable
 
