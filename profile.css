@@ -24,21 +24,23 @@ section {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 0.75rem;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1rem;
 }
 
 section + section {
   margin-top: 1rem;
 }
 
-/* Profile header block */
 section > div {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
 }
 
 section img {
+  width: clamp(64px, 20vw, 96px);
+  height: auto;
   border-radius: 999px;
   border: 2px solid var(--border);
   background: #fff;
@@ -63,16 +65,27 @@ section ul {
   cursor: pointer;
   transition: border-color 0.25s;
   text-decoration: none;
+  width: 100%;
 }
 
 .edit-btn:hover {
   border-color: var(--accent);
 }
 
-@media (max-width: 560px) {
+@media (min-width: 640px) {
+  section {
+    padding: 1rem 1.25rem;
+  }
   section > div {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .edit-btn {
+    width: auto;
+  }
+  section img {
+    width: 96px;
   }
 }
 
