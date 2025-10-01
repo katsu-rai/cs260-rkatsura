@@ -1,0 +1,58 @@
+/* About page styles using site palette */
+
+:root {
+  --bg: #f8f6f0;
+  --surface: #f9f9f9;
+  --muted-surface: #f0f0f0;
+  --text: #213547;
+  --muted-text: #5f6c7b;
+  --border: #e5e7eb;
+  --link: #646cff;
+  --accent: rgb(154, 3, 30);
+}
+
+main {
+  width: min(960px, 92%);
+  margin-inline: auto;
+}
+
+main h1 {
+  margin: 0.25rem 0 1rem;
+}
+
+section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+
+section p + p {
+  margin-top: 0.75rem;
+}
+
+a {
+  color: var(--link);
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--accent);
+  color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  text-decoration: none;
+}
+
+.cta:hover {
+  border-color: var(--accent);
+}
+
+
