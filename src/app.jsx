@@ -36,7 +36,7 @@ export default function App() {
 
         <footer>
           <hr />
-          <span className="text-reset">EduQuest Team</span>
+          <span className="text-reset">Rai Katsuragawa</span>
           <br />
           <a className="text-reset" href="https://github.com/katsu-rai/cs260-rkatsura" target="_blank" rel="noreferrer">GitHub</a>
         </footer>
