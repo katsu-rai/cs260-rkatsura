@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/katsu-rai/cs260-rkatsura/issues"
   },
-  "homepage": "https://github.com/katsu-rai/cs260-rkatsura#readme"
+  "homepage": "https://github.com/katsu-rai/cs260-rkatsura#readme",
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.3"
+  }
 }
