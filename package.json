@@ -1,0 +1,25 @@
+{
+  "name": "cs260-rkatsura",
+  "version": "1.0.0",
+  "description": "EduQuest is an interactive educational platform that provides students with personalized quests to strengthen their learning. The system uses Large Language Models (LLMs) to create weekly and daily quests tailored to each student’s strengths, weaknesses, interests, and learning styles. Teachers can also monitor and support student growth through the platform.",
+  "main": "index.js",
+  "devDependencies": {
+    "vite": "^7.1.9"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katsu-rai/cs260-rkatsura.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katsu-rai/cs260-rkatsura/issues"
+  },
+  "homepage": "https://github.com/katsu-rai/cs260-rkatsura#readme"
+}
