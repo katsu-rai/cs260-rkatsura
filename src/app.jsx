@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './app.css';
 
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
@@ -8,6 +8,20 @@ import { Profile } from './profile/profile';
 import { About } from './about/about';
 
 export default function App() {
+  const AuthState = Object.freeze({ Unknown: 'Unknown', Authenticated: 'Authenticated', Unauthenticated: 'Unauthenticated' });
+  const storedUser = typeof localStorage !== 'undefined' ? localStorage.getItem('userName') : '';
+  const [userName, setUserName] = useState(storedUser || '');
+  const [authState, setAuthState] = useState(storedUser ? AuthState.Authenticated : AuthState.Unauthenticated);
+
+  function handleAuthChange(nextUserName, nextState) {
+    setUserName(nextUserName || '');
+    setAuthState(nextState);
+    if (nextState === AuthState.Authenticated) {
+      localStorage.setItem('userName', nextUserName || '');
+    } else {
+      localStorage.removeItem('userName');
+    }
+  }
   return (
     <BrowserRouter>
       <div className="body">
@@ -16,8 +30,12 @@ export default function App() {
           <nav>
             <menu>
               <li><NavLink to="/">Home</NavLink></li>
-              <li><NavLink to="/chat">Chat</NavLink></li>
-              <li><NavLink to="/profile">Profile</NavLink></li>
+              {authState === AuthState.Authenticated && (
+                <li><NavLink to="/chat">Chat</NavLink></li>
+              )}
+              {authState === AuthState.Authenticated && (
+                <li><NavLink to="/profile">Profile</NavLink></li>
+              )}
               <li><NavLink to="/about">About</NavLink></li>
             </menu>
           </nav>
@@ -26,9 +44,44 @@ export default function App() {
 
         <main>
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/"
+              element={
+                <Login
+                  userName={userName}
+                  authState={authState}
+                  onAuthChange={(name, state) => handleAuthChange(name, state)}
+                />
+              }
+            />
+            <Route
+              path="/chat"
+              element={
+                authState === AuthState.Authenticated ? (
+                  <Chat />
+                ) : (
+                  <Login
+                    userName={userName}
+                    authState={authState}
+                    onAuthChange={(name, state) => handleAuthChange(name, state)}
+                  />
+                )
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                authState === AuthState.Authenticated ? (
+                  <Profile />
+                ) : (
+                  <Login
+                    userName={userName}
+                    authState={authState}
+                    onAuthChange={(name, state) => handleAuthChange(name, state)}
+                  />
+                )
+              }
+            />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

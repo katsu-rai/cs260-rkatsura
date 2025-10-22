@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-export function Login() {
-  const [email, setEmail] = useState("");
+export function Login({ userName, authState, onAuthChange }) {
+  const [email, setEmail] = useState(userName || "");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Mock auth then navigate to chat
-    navigate('/chat');
+    onAuthChange(email || 'StudentUser', 'Authenticated');
   }
   return (
     <main>
