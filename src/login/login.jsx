@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Login({ userName, authState, onAuthChange }) {
   const [email, setEmail] = useState(userName || "");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     onAuthChange(email || 'StudentUser', 'Authenticated');
+    navigate('/chat');
   }
   return (
     <main>
