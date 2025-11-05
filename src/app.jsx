@@ -72,7 +72,10 @@ export default function App() {
               path="/profile"
               element={
                 authState === AuthState.Authenticated ? (
-                  <Profile />
+                  <Profile
+                    userName={userName}
+                    onLogout={() => handleAuthChange('', AuthState.Unauthenticated)}
+                  />
                 ) : (
                   <Login
                     userName={userName}
