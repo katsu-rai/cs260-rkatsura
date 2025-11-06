@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './profile.css';
 
 export function Profile({ onLogout, userName }) {
   const navigate = useNavigate();
+  const [sessionMsg, setSessionMsg] = useState('Checking session...');
+
+  useEffect(() => {
+    let ignore = false;
+    (async () => {
+      try {
+        const r = await fetch('/api/auth/me', { credentials: 'include' });
+        if (!ignore) {
+          if (r.ok) {
+            const data = await r.json();
+            setSessionMsg(`Signed in as ${data.email || userName || 'user'}`);
+          } else {
+            setSessionMsg('Not signed in');
+          }
+        }
+      } catch {
+        if (!ignore) setSessionMsg('Unable to check session');
+      }
+    })();
+    return () => { ignore = true; };
+  }, [userName]);
 
   async function handleLogout() {
     try {
@@ -17,6 +38,7 @@ export function Profile({ onLogout, userName }) {
   return (
     <main>
       <h1>Profile</h1>
+      <p style={{ color: '#5f6c7b', marginTop: '0.25rem' }}>{sessionMsg}</p>
       <section>
         <p>Your account details (placeholder):</p>
         <div>
