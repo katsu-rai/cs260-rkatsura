@@ -5,12 +5,25 @@ export function Chat() {
   const [messages, setMessages] = useState(["Welcome to EduQuest chat!"]);
   const [text, setText] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const value = text.trim();
     if (!value) return;
-    setMessages((prev) => [...prev, value]);
+    setMessages((prev) => [...prev, `You: ${value}`]);
     setText("");
+    try {
+      const resp = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ message: value }),
+      });
+      const data = await resp.json();
+      const reply = data?.reply || 'Sorry, no response.';
+      setMessages((prev) => [...prev, `Bot: ${reply}`]);
+    } catch (err) {
+      setMessages((prev) => [...prev, 'Bot: There was an error contacting the chat service.']);
+    }
   }
 
   return (

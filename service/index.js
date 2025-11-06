@@ -1,25 +1,67 @@
+require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const express = require('express');
 const uuid = require('uuid');
+const path = require('path');
 
 const app = express();
 const authCookieName = 'token';
 
-// In-memory users (cleared on restart)
 let users = [];
 
-// Port (front-end is statically hosted by the service in production)
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static('public'));
+const publicDir = path.join(__dirname, '..', 'public');
+app.use(express.static(publicDir));
 
 // API router
 const apiRouter = express.Router();
 app.use('/api', apiRouter);
+
+// Test endpoint
+apiRouter.get('/helloworld', (_req, res) => {
+  res.send({ message: 'hello world' });
+});
+
+apiRouter.post('/chat', async (req, res) => {
+  const { message } = req.body || {};
+  if (!message) {
+    res.status(400).send({ msg: 'Missing message' });
+    return;
+  }
+  try {
+    if (process.env.OPENAI_API_KEY) {
+      const r = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: 'gpt-3.5-turbo',
+          messages: [
+            { role: 'system', content: 'You are EduOwl, a friendly study buddy. Keep replies to 1-2 sentences.' },
+            { role: 'user', content: message },
+          ],
+        }),
+      });
+      const data = await r.json();
+      const reply = data?.choices?.[0]?.message?.content?.trim() || 'Sorry, I do not have an answer.';
+      res.send({ reply });
+    } else {
+      const r = await fetch('https://api.adviceslip.com/advice');
+      const data = await r.json();
+      const reply = data?.slip?.advice || 'Keep going. You can do it!';
+      res.send({ reply });
+    }
+  } catch (e) {
+    res.status(500).send({ msg: 'Chat provider error', error: e.message });
+  }
+});
 
 // Create account
 apiRouter.post('/auth/create', async (req, res) => {
@@ -65,7 +107,6 @@ const verifyAuth = async (req, res, next) => {
   res.status(401).send({ msg: 'Unauthorized' });
 };
 
-// Optional: current user endpoint
 apiRouter.get('/auth/me', verifyAuth, async (req, res) => {
   const user = await findUser('token', req.cookies[authCookieName]);
   res.send({ email: user.email });
@@ -78,7 +119,7 @@ app.use(function (err, _req, res, _next) {
 
 // SPA fallback
 app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' });
+  res.sendFile(path.join(publicDir, 'index.html'));
 });
 
 // Helpers
