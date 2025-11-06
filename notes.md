@@ -97,3 +97,12 @@ Handling the toggling of the checkboxes was particularly interesting.
   ))}
 </div>
 ```
+
+## Service
+
+- I built a small Express server. It serves the built frontend and gives `/api` routes.
+- I added auth routes: `POST /api/auth/create`, `POST /api/auth/login`, `DELETE /api/auth/logout`, and `GET /api/auth/me`.
+- Cookies hold the login token. They are `httpOnly` and `sameSite=strict`.
+- I made a test route: `GET /api/helloworld` returns `{message:"hello world"}`.
+- The chat route `POST /api/chat` calls a third‑party API. If `OPENAI_API_KEY` is set in `service/.env`, it uses OpenAI. If not, it uses AdviceSlip.
+- In dev, Vite proxies `/api` to `http://localhost:4000`. In prod, the service hosts both frontend and API on the same domain.
