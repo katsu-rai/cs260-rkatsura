@@ -3,7 +3,6 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const express = require('express');
 const uuid = require('uuid');
-const path = require('path');
 
 const app = express();
 const authCookieName = 'token';
@@ -15,8 +14,7 @@ const port = process.argv.length > 2 ? process.argv[2] : 4000;
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-const publicDir = path.join(__dirname, '..', 'public');
-app.use(express.static(publicDir));
+app.use(express.static('public'));
 
 // API router
 const apiRouter = express.Router();
@@ -119,7 +117,7 @@ app.use(function (err, _req, res, _next) {
 
 // SPA fallback
 app.use((_req, res) => {
-  res.sendFile(path.join(publicDir, 'index.html'));
+  res.sendFile('index.html', { root: 'public' });
 });
 
 // Helpers
