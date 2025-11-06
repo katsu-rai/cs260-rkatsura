@@ -107,12 +107,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
+- [x] **Node.js/Express HTTP service** - Implemented `service/index.js` with JSON/cookies and SPA fallback.
+- [x] **Static middleware for frontend** - Serves built frontend from `public/` via Express static.
+- [x] **Calls to third party endpoints** - `/api/chat` proxies to OpenAI (with `OPENAI_API_KEY`) or AdviceSlip. Right now, it only works with AdviceSlip.
+- [x] **Backend service endpoints** - Auth (`/auth/create`, `/auth/login`, `/auth/logout`, `/auth/me`), chat, and `/helloworld`.
+- [x] **Frontend calls service endpoints** - Login/Signup/Logout and Chat use `fetch` with `credentials: 'include'`.
+- [x] **Supports registration, login, logout, and restricted endpoint** - Auth flow implemented; `/auth/me` requires valid cookie.
 
 ## 🚀 DB deliverable
 
