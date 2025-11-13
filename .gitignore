@@ -1,3 +1,4 @@
 node_modules
 .env
 service/.env
+service/dbConfig.json
